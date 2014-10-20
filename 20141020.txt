@@ -1,4 +1,5 @@
-部署一套ELK (elastic search, logstash, kibana)，解决的一个难点是针对最近版本的kibana, elastic(1.4 beta等），logstash的配置文件需要改为：
+部署一套ELK (elastic search, logstash, kibana)，
+解决的一个难点是针对最近版本的kibana, elastic(elastic 1.4 beta, kibana 4 beta 1.1等），logstash的配置文件需要改为：
 input {
   file {
     path => [ "/tmp/elk1/*.log", "/tmp/elk2/*.log" ]
