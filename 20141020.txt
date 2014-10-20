@@ -18,3 +18,18 @@ output {
 加上"protocol=>http"而不是默认的node模式
 
 kibana的新版本默认带服务器，而当前stable需要部署新服务器
+
+===============================================
+在另一台服务器上，有bond0, eth0, eth1,
+eth3等，elastic和kibina默认启动绑定到0.0.0.0，这个地址默认绑定到eth0
+，需要指定用bond0的地址
+
+network.bind_host: 10.17.4.200
+network.publish_host: 10.17.4.200
+network.host: 10.17.4.200
+
+在elasticsearch中修改配置文件(这个配置很重要，默认是多播找master，以前会莫名其妙找到其他master，在没有做任何配置的情况下）
+discovery.zen.ping.multicast.enabled: false
+
+在kibina中配置文件中显示指定host
+host: "10.17.7.210" 
