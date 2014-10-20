@@ -1,0 +1,19 @@
+部署一套ELK (elastic search, logstash, kibana)，解决的一个难点是针对最近版本的kibana, elastic(1.4 beta等），logstash的配置文件需要改为：
+input {
+  file {
+    path => [ "/tmp/elk1/*.log", "/tmp/elk2/*.log" ]
+    start_position => beginning
+  }
+}
+
+
+output {
+  elasticsearch {
+    host => localhost
+    protocol => http
+  }
+  stdout { codec => rubydebug }
+}
+加上"protocol=>http"而不是默认的node模式
+
+kibana的新版本默认带服务器，而当前stable需要部署新服务器
