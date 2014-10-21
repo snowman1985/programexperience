@@ -1,0 +1,7 @@
+我的一个GITHUB的REPOSITORY有两个remote url，一个是orgin，另一个是我需要pull代码merge的
+在git pull point impa后，git可能cache了account信息
+在我git push origin master时，提示403错误，
+解决办法，在.git/config中找到[remote "origin"]中的url，
+在url的domain中加上account@即可
+
+bootstrap的badge的css可以根据源文件在外面override
