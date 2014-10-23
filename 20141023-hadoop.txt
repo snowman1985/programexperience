@@ -1,0 +1,5 @@
+hadoop 2.2.0
+跑自带的wordcount的map-reduce的例子
+/opt/hadoop/bin/hadoop  jar  /opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar  wordcount /user/applogtest/14-08-11 /user/try
+
+/opt/hadoop/bin/hadoop jar /opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar   pi 3 10000
